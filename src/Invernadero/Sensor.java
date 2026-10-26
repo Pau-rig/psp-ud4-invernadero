@@ -53,7 +53,7 @@ public abstract class Sensor implements Runnable{
             String texAlerta = "";
             if (Alerta) {
                 conAlert++;
-                texAlerta = " ⚠ ALERTA";
+                texAlerta = " ⚠ ALERTA ⚠ ";
             }
 
             //3. Muestra el log hora
