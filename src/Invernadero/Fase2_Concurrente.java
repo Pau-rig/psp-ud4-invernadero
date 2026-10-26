@@ -34,6 +34,7 @@ public class Fase2_Concurrente {
             riego.join();
         }catch (InterruptedException e){
             System.out.println("El hilo main fue interrumpido");
+            System.out.println("Mensaje de excepción" + e.getMessage());
         }
 
         // 6. Guardamos el tiempo final
