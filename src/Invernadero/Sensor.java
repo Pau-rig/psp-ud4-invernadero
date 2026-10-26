@@ -53,12 +53,12 @@ public abstract class Sensor implements Runnable{
             String texAlerta = "";
             if (Alerta) {
                 conAlert++;
-                texAlerta = "⚠ ALERTA";
+                texAlerta = " ⚠ ALERTA";
             }
 
             //3. Muestra el log hora
             String horaActual = LocalTime.now().format(Hora);
-            System.out.printf("[%s] [%s] %s: %.1f %s%s%n",
+            System.out.printf("[%s] [%s] %s: %.1f%s%s%n",
                     horaActual, nomHilo, nombre, valor, unidad, texAlerta);
 
             //4.
@@ -72,7 +72,7 @@ public abstract class Sensor implements Runnable{
 
     public String informe() {
     double media = (lecRealizada > 0 ) ? (sumaValores / lecRealizada) : 0.0;
-        return String.format("%s -> Lecturas: %d | Media: %.2f %s | Mín: %.1f %s | Máx: %.1f %s | Alertas: %d",
+        return String.format("%s | Lecturas: %d | Media: %.2f%s | Mín: %.1f%s | Máx: %.1f%s | Alertas: %d",
                 nombre, lecRealizada, media, unidad, min, unidad, max, unidad, conAlert);
 
     }
