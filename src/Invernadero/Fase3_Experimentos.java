@@ -18,7 +18,7 @@ public class Fase3_Experimentos {
         hiloTempExpA.start();
 
         //3. Interrumpe el hilo
-        System.out.println("--- INFORMES SIN ESPERAR---");
+        System.out.println("--- INFORMES SIN ESPERAR ---");
         System.out.println(tempExpA.informe());
 
         //4. Esperar el hilo
@@ -30,7 +30,7 @@ public class Fase3_Experimentos {
 
         //5. Informe despúes de eperar el hilo
         System.out.println("");
-        System.out.println("--- INFORMES ESPERANDO---");
+        System.out.println("--- INFORMES ESPERANDO ---");
         System.out.println(tempExpA.informe());
         System.out.println("------------------------------");
 
@@ -76,7 +76,7 @@ public class Fase3_Experimentos {
             riegoExpC.join();
         }catch (InterruptedException e){
             System.out.println("Interrumido");
-            System.out.println("Mensaje de excepción" + e.getMessage());
+            System.out.println("Mensaje de excepción: " + e.getMessage());
         }
 
         System.out.println("Estado: " + riegoExpC.getState());
