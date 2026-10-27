@@ -4,6 +4,7 @@ public class Fase3_Experimentos {
 
     public static void main(String[] args) {
         System.out.println("--- FASE 3 ---");
+        System.out.println("");
 
         // EXPERIMENTO A
         System.out.println("------------------------------");

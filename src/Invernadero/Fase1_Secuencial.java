@@ -1,9 +1,10 @@
 package Invernadero;
 
-public class Fase1_Secuncial {
+public class Fase1_Secuencial {
 
     public static void main(String[] args) {
         System.out.println("--- FASE 1 ---");
+        System.out.println("");
 
         // 1. Guardamos el tiempo de inicio
         long Inicio = System.currentTimeMillis();
@@ -25,6 +26,7 @@ public class Fase1_Secuncial {
         long Fin = System.currentTimeMillis();
         long tiempoTotal = Fin - Inicio;
 
+        System.out.println("");
         System.out.println("--- INFORMES ---");
         System.out.println(temperatura.informe());
         System.out.println(humedad.informe());

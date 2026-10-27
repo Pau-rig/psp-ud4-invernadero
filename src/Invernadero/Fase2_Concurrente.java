@@ -4,6 +4,7 @@ public class Fase2_Concurrente {
 
     public static void main(String[] args) {
         System.out.println("--- FASE 2 ---");
+        System.out.println("");
 
         // 1. Guardamos el tiempo de inicio
         long Inicio = System.currentTimeMillis();
@@ -42,6 +43,7 @@ public class Fase2_Concurrente {
         long tiempoTotal = Fin - Inicio;
 
         // 7. Imprimir los informes
+        System.out.println("");
         System.out.println("--- INFORMES ---");
         System.out.println(temperatura.informe());
         System.out.println(humedad.informe());

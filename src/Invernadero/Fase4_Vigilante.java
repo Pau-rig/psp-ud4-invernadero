@@ -3,7 +3,7 @@ package Invernadero;
 public class Fase4_Vigilante {
 
     public static void main(String[] args){
-        System.out.println("--- FASE 3 ---");
+        System.out.println("--- FASE 4 ---");
 
         //1. Objetos
         Temperatura temperatura = new Temperatura();

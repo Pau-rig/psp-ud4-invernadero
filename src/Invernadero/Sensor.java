@@ -34,10 +34,13 @@ public abstract class Sensor implements Runnable{
 
 @Override
     public void run() {
+    //Para mostrar la hora en milisegundos en el log
     DateTimeFormatter Hora = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
 
+    //Como utilizamos Runnable tenemos que usar Thread.currentThread() para los hilos que ejecutaremos
     String nomHilo = Thread.currentThread().getName();
 
+        //Bucle para realizar el número de lecturas
         for (int i = 0; i < numLectura; i++) {
             //Tomamos la lectura
             double valor = medir();
@@ -56,12 +59,12 @@ public abstract class Sensor implements Runnable{
                 texAlerta = " ⚠ ALERTA ⚠ ";
             }
 
-            //3. Muestra el log hora
+            //Muestra el log hora
             String horaActual = LocalTime.now().format(Hora);
             System.out.printf("[%s] [%s] %s: %.1f%s%s%n",
                     horaActual, nomHilo, nombre, valor, unidad, texAlerta);
 
-            //4.
+            //Pausamos el hilo para simular el intervalo de medicion
             try {
                 Thread.sleep(periodo);
             }catch (InterruptedException e){
@@ -70,8 +73,10 @@ public abstract class Sensor implements Runnable{
         }
     }
 
+    //Método informe
     public String informe() {
     double media = (lecRealizada > 0 ) ? (sumaValores / lecRealizada) : 0.0;
+        //El texto en el formato deseado
         return String.format("%s | Lecturas: %d | Media: %.2f%s | Mín: %.1f%s | Máx: %.1f%s | Alertas: %d",
                 nombre, lecRealizada, media, unidad, min, unidad, max, unidad, conAlert);
 
